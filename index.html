@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,6 +9,10 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="src/style.css" />
     <title>countriesproject</title>
@@ -28,8 +32,10 @@
           class="flex items-center justify-center py-2 px-50 border border-[#8b9bae] rounded-md shadow-sm"
           type="search"
           placeholder="Search for any country"
+          id="text-input"
         />
         <button
+          id="button"
           class="absolute inset-y-0 right-0 flex items-center px-4 text-gray-700 bg-gray-100 border rounded-r-md hover:bg-gray-200 *:border-[#8b9bae]"
         >
           <svg
@@ -50,38 +56,17 @@
 
     <!-- Countries Information  -->
     <section
-      class="p-5 mx-auto mt-10 w-240 h-128 rounded-3xl bg-white border border-[#c5cdcd]"
+      id="result-section"
+      class="hidden p-5 mx-auto mt-10 w-240 h-128 rounded-3xl bg-white border border-[#c5cdcd]"
     >
       <!-- title -->
-      <div class="flex justify-between">
-        <div>
-          <!-- Continent  -->
-          <div><p class="font-bold text-[#2f4156]">COUNTRY IN EUROPE</p></div>
-          <!-- Country and Flag  -->
-          <div class="size-10 flex gap-3 items-center">
-            <img src="src/images/norwayflag.jpg" alt="" />
-            <p class="font-bold text-2xl">Norway</p>
-          </div>
-        </div>
+      <div id="geo-info" class="flex justify-between"></div>
 
-        <!-- additional info  -->
-        <div class="flex gap-10">
-          <div>
-            <p class="font-bold text-[#2f4156]">CAPITAL</p>
-            <p class="font-semibold text-2xl">Oslo</p>
-          </div>
-
-          <div>
-            <p class="font-bold text-[#2f4156]">CURRENCY</p>
-            <p class="font-semibold text-2xl">NOK</p>
-          </div>
-
-          <div>
-            <p class="font-bold text-[#2f4156]">POPULATION</p>
-            <p class="font-semibold text-2xl">5.457 mil</p>
-          </div>
-        </div>
-      </div>
+      <!-- Weather  -->
+      <div
+        id="weather-info"
+        class="hidden mt-6 flex justify-between flex-col w-xs h-48 rounded-2xl bg-linear-to-t from-[#96b4e4] to-purple-100 border-2 border-[#eff0f0] p-4"
+      ></div>
     </section>
     <script type="module" src="/src/main.js"></script>
   </body>
